@@ -2,10 +2,7 @@
 import cgi, cgitb, secret, time, os
 from templates import secret_page
 
-print("Content-type:text/html\r\n\r\n")
-print
-
-#Q5, Q6
+#Q5
 
 # form  = cgi.FieldStorage()
 
@@ -14,15 +11,18 @@ print
 
 
 # if(username == secret.username and password == secret.password):
-#     print(f"<p>Set-Cookie: username={username} password={password}</p>")
+#     print(f"Set-Cookie: username={username}\r\nSet-Cookie: password={password}\r\nContent-type:text/html\r\n\r\n")
 #     print(secret_page(username, password))
 
-#-----------------------------------------------------------------------#
-
-#Q7
+#Q6
 # if("HTTP_COOKIE" in os.environ.keys()):
-#     cookie = os.environ["HTTP_COOKIE"]
-#     username = cookie.split(";")[0].split("=")[1]
-#     password = cookie.split(";")[1].split("=")[1]
+#     cookie_list = os.environ["HTTP_COOKIE"].split(";")
+#     username = ""
+#     password = ""
+#     for cookie in cookie_list:
+#         if cookie.split("=")[0] == " username":
+#             username = cookie.split("=")[1]
+#         elif cookie.split("=")[0] == " password":
+#             password = cookie.split("=")[1]
 #     if(username == secret.username and password == secret.password):
 #         print(secret_page(username, password))

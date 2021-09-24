@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os, json
+import os, json, secret
 from templates import login_page
 print("Content-type:text/html\r\n\r\n")
 print
@@ -17,5 +17,4 @@ print
 #     print(os.environ["HTTP_USER_AGENT"])
 
 #Q4
-# print(login_page())
-
+print(login_page())
